@@ -252,7 +252,6 @@ class Human(NPC):
         
         #Attacking
         self.weapon=guns.AR15()
-        self.radius=self.weapon.range
         self.aiming=False
                 
         #Attributes
