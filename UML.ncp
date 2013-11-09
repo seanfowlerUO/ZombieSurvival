@@ -1,0 +1,619 @@
+<Project>
+  <Name>ZTD</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Game Objects</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>GameObject</Name>
+        <Access>Public</Access>
+        <Location left="583" top="134" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">pygame.Surface image</Member>
+        <Member type="Field">pygame.Rect rect</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Animate</Name>
+        <Access>Public</Access>
+        <Location left="297" top="467" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">GameObject target</Member>
+        <Member type="Method">public void move()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void attack()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Inanimate</Name>
+        <Access>Public</Access>
+        <Location left="1400" top="471" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Human</Name>
+        <Access>Public</Access>
+        <Location left="338" top="1069" />
+        <Size width="162" height="372" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">FirstPlayer playerState</Member>
+        <Member type="Field">Sqad squadState</Member>
+        <Member type="Field">GameObject target</Member>
+        <Member type="Field">Outfit outfit</Member>
+        <Member type="Method">public void move()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void attack()</Member>
+        <Member type="Method">public void reload()</Member>
+        <Member type="Method">public Item dropItem(Item item)</Member>
+        <Member type="Method">public void takeItem(Item item)</Member>
+        <Member type="Method">public void setTarget(GameObject target)</Member>
+        <Member type="Method">public GameObject getTarget()</Member>
+        <Member type="Method">public void setControlState(ControlState newState)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Zombie</Name>
+        <Access>Public</Access>
+        <Location left="88" top="738" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void move()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void attack()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirtySprite</Name>
+        <Access>Public</Access>
+        <Location left="583" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Observer</Name>
+        <Access>Public</Access>
+        <Location left="770" top="454" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">list observedBy</Member>
+        <Member type="Field">list observing</Member>
+        <Member type="Method">public void observe()</Member>
+        <Member type="Method">public void notifyObservers()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>FirstPlayer</Name>
+        <Access>Public</Access>
+        <Location left="172" top="1199" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void move()</Member>
+        <Member type="Method">void attack()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>Squad</Name>
+        <Access>Public</Access>
+        <Location left="10" top="1199" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void move()</Member>
+        <Member type="Method">void attack()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ControlState</Name>
+        <Access>Public</Access>
+        <Location left="88" top="1069" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void move()</Member>
+        <Member type="Method">void attack()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Item</Name>
+        <Access>Public</Access>
+        <Location left="813" top="816" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int worth</Member>
+        <Member type="Field">int size</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Weapon</Name>
+        <Access>Public</Access>
+        <Location left="1042" top="857" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int fireRate</Member>
+        <Member type="Field">int dificulty</Member>
+        <Member type="Field">WeaponInterface weaponInterface</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Gun</Name>
+        <Access>Public</Access>
+        <Location left="2011" top="859" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int fireRate</Member>
+        <Member type="Field">int difficulty</Member>
+        <Member type="Field">WeaponInterface weaponInterface</Member>
+        <Member type="Field">int projectiles</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AmmoBox</Name>
+        <Access>Public</Access>
+        <Location left="471" top="683" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int amount</Member>
+        <Member type="Field">int capacity</Member>
+        <Member type="Method">public void decrementAmmo()</Member>
+        <Member type="Method">public void incrementAmmo(int amount)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Magazine</Name>
+        <Access>Public</Access>
+        <Location left="2270" top="859" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int amount</Member>
+        <Member type="Field">int capacity</Member>
+        <Member type="Method">public void decrementAmmo()</Member>
+        <Member type="Method">public void incrementAmmo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MeleeWeapon</Name>
+        <Access>Public</Access>
+        <Location left="1095" top="1145" />
+        <Size width="164" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WoodenBat</Name>
+        <Access>Public</Access>
+        <Location left="1285" top="1202" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MetalBat</Name>
+        <Access>Public</Access>
+        <Location left="1285" top="1264" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>WeaponInterface</Name>
+        <Access>Public</Access>
+        <Location left="1544" top="1145" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void attack()</Member>
+        <Member type="Method">void reload()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Hands</Name>
+        <Access>Public</Access>
+        <Location left="716" top="1130" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Clothing</Name>
+        <Access>Public</Access>
+        <Location left="870" top="1221" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Hat</Name>
+        <Access>Public</Access>
+        <Location left="870" top="1270" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Shoes</Name>
+        <Access>Public</Access>
+        <Location left="870" top="1417" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Shirt</Name>
+        <Access>Public</Access>
+        <Location left="870" top="1320" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Pants</Name>
+        <Access>Public</Access>
+        <Location left="870" top="1369" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Outfit</Name>
+        <Access>Public</Access>
+        <Location left="636" top="1219" />
+        <Size width="162" height="243" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Shirt shirt</Member>
+        <Member type="Field">Shoes shoes</Member>
+        <Member type="Field">Hat hat</Member>
+        <Member type="Field">Pants pants</Member>
+        <Member type="Field">Container container</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Container</Name>
+        <Access>Public</Access>
+        <Location left="544" top="968" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>SingleShotInterface</Name>
+        <Access>Public</Access>
+        <Location left="1238" top="985" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void attack()</Member>
+        <Member type="Method">void reload()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>MagazineInterface</Name>
+        <Access>Public</Access>
+        <Location left="1419" top="985" />
+        <Size width="162" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void attack()</Member>
+        <Member type="Method">void reload()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>AR15</Name>
+        <Access>Public</Access>
+        <Location left="1773" top="985" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Projectile</Name>
+        <Access>Public</Access>
+        <Location left="1686" top="471" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="4" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>328</X>
+          <Y>710</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>362</X>
+          <Y>1044</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>362</X>
+          <Y>719</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="0" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="9">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>275</X>
+          <Y>1117</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="8" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>146</X>
+          <Y>1194</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>205</X>
+          <Y>1189</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="6" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="10" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="11" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1000</X>
+          <Y>886</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="12" second="11">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1263</X>
+          <Y>933</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="13" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>658</X>
+          <Y>757</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>824</X>
+          <Y>791</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="14" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2356</X>
+          <Y>833</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1000</X>
+          <Y>831</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="15" second="11">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="16" second="15">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1260</X>
+          <Y>1222</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1286</X>
+          <Y>1222</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="17" second="15">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1260</X>
+          <Y>1275</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1284</X>
+          <Y>1275</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="11" second="18">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1607</X>
+          <Y>1120</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="19" second="15">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="12" second="14">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="19">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="20" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="21" second="20">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1057</X>
+          <Y>1277</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1058</X>
+          <Y>1263</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="22" second="20">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1070</X>
+          <Y>1431</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1057</X>
+          <Y>1229</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="23" second="20">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1061</X>
+          <Y>1342</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1057</X>
+          <Y>1251</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="24" second="20">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1066</X>
+          <Y>1387</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1059</X>
+          <Y>1241</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="25" second="21">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="25" second="24">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="25" second="22">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="25">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>535</X>
+          <Y>1252</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="25" second="23">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="26" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>731</X>
+          <Y>990</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="26" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>640</X>
+          <Y>941</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>784</X>
+          <Y>870</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="25" second="26">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>583</X>
+          <Y>1235</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="27" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="28" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="30" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="12" second="30">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="29" second="12">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
