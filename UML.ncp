@@ -12,6 +12,7 @@
         <Collapsed>False</Collapsed>
         <Member type="Field">pygame.Surface image</Member>
         <Member type="Field">pygame.Rect rect</Member>
+        <Member type="Method">public void flipFlag()</Member>
         <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
@@ -40,7 +41,7 @@
         <Location left="833" top="400" />
         <Size width="254" height="77" />
         <Collapsed>True</Collapsed>
-        <Modifier>None</Modifier>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Human</Name>
@@ -108,7 +109,7 @@
         <Member type="Method">void attack()</Member>
       </Entity>
       <Entity type="Interface">
-        <Name>Squad</Name>
+        <Name>SquadMember</Name>
         <Access>Public</Access>
         <Location left="10" top="1814" />
         <Size width="162" height="95" />
@@ -133,7 +134,7 @@
         <Collapsed>False</Collapsed>
         <Member type="Field">int worth</Member>
         <Member type="Field">int size</Member>
-        <Modifier>None</Modifier>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Weapon</Name>
@@ -145,7 +146,7 @@
         <Member type="Field">int dificulty</Member>
         <Member type="Field">WeaponInterface weaponInterface</Member>
         <Member type="Field">int range</Member>
-        <Modifier>None</Modifier>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Firearm</Name>
@@ -157,7 +158,7 @@
         <Member type="Field">int difficulty</Member>
         <Member type="Field">WeaponInterface weaponInterface</Member>
         <Member type="Field">int projectiles</Member>
-        <Modifier>None</Modifier>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>AmmoBox</Name>
@@ -191,7 +192,7 @@
         <Collapsed>False</Collapsed>
         <Member type="Field">int fireRate</Member>
         <Member type="Field">int difficulty</Member>
-        <Modifier>None</Modifier>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>WoodenBat</Name>
@@ -288,16 +289,16 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Interface">
-        <Name>SingleShotInterface</Name>
+        <Name>WeaponInterfaceSingleShot</Name>
         <Access>Public</Access>
-        <Location left="1263" top="1636" />
+        <Location left="1262" top="1636" />
         <Size width="162" height="95" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void attack()</Member>
         <Member type="Method">void reload()</Member>
       </Entity>
       <Entity type="Interface">
-        <Name>MagazineInterface</Name>
+        <Name>WeaponInterfaceMagazine</Name>
         <Access>Public</Access>
         <Location left="1444" top="1636" />
         <Size width="162" height="95" />
@@ -321,7 +322,7 @@
         <Collapsed>False</Collapsed>
         <Member type="Method">public void move()</Member>
         <Member type="Method">public void update()</Member>
-        <Modifier>None</Modifier>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>ZombieHands</Name>
@@ -451,7 +452,7 @@
         <Member type="Method">void equip(Animate animate)</Member>
       </Entity>
       <Entity type="Interface">
-        <Name>WeaponEquipInterface</Name>
+        <Name>EquipInterfaceWeapon</Name>
         <Access>Public</Access>
         <Location left="1238" top="1051" />
         <Size width="162" height="78" />
@@ -459,7 +460,7 @@
         <Member type="Method">void equip(Animate animate)</Member>
       </Entity>
       <Entity type="Interface">
-        <Name>ClothingEquipInterface</Name>
+        <Name>EquipInterfaceClothing</Name>
         <Access>Public</Access>
         <Location left="1238" top="1138" />
         <Size width="162" height="78" />
@@ -467,7 +468,7 @@
         <Member type="Method">void equip(Animate animate)</Member>
       </Entity>
       <Entity type="Interface">
-        <Name>BagEquipInterface</Name>
+        <Name>EquipInterfaceBag</Name>
         <Access>Public</Access>
         <Location left="1238" top="1226" />
         <Size width="162" height="78" />
@@ -489,7 +490,7 @@
         <Location left="1282" top="804" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Modifier>None</Modifier>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Food</Name>
@@ -651,8 +652,8 @@
           <Y>2114</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>1080</X>
-          <Y>2100</Y>
+          <X>1079</X>
+          <Y>2097</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="22" second="20">
@@ -663,8 +664,8 @@
           <Y>2268</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>1079</X>
-          <Y>2066</Y>
+          <X>1080</X>
+          <Y>2064</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="23" second="20">
@@ -675,8 +676,8 @@
           <Y>2179</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>1079</X>
-          <Y>2088</Y>
+          <X>1083</X>
+          <Y>2085</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Generalization" first="24" second="20">
@@ -687,8 +688,8 @@
           <Y>2224</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>1081</X>
-          <Y>2078</Y>
+          <X>1079</X>
+          <Y>2075</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="25" second="21">
@@ -811,7 +812,7 @@
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
           <X>1105</X>
-          <Y>1912</Y>
+          <Y>1924</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="4" second="32">
@@ -890,6 +891,10 @@
         <BendPoint relativeToStartShape="True">
           <X>957</X>
           <Y>2031</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>938</X>
+          <Y>1954</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
@@ -1057,7 +1062,7 @@
       <Entity type="Class">
         <Name>Driver</Name>
         <Access>Public</Access>
-        <Location left="1003" top="10" />
+        <Location left="999" top="44" />
         <Size width="162" height="162" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public DriverState driverState</Member>
@@ -1070,7 +1075,7 @@
       <Entity type="Interface">
         <Name>DriverState</Name>
         <Access>Public</Access>
-        <Location left="1003" top="234" />
+        <Location left="999" top="268" />
         <Size width="162" height="96" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void catchEvents()</Member>
@@ -1078,7 +1083,7 @@
       <Entity type="Interface">
         <Name>RunningState</Name>
         <Access>Public</Access>
-        <Location left="1117" top="406" />
+        <Location left="1113" top="440" />
         <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void catchEvents()</Member>
@@ -1086,7 +1091,7 @@
       <Entity type="Interface">
         <Name>PausedState</Name>
         <Access>Public</Access>
-        <Location left="894" top="406" />
+        <Location left="890" top="440" />
         <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void catchEvents()</Member>
@@ -1099,13 +1104,13 @@
         spawn, move, checkCollisions, update, Attack
     GraphicsHandler:
         draw</Text>
-        <Location left="1240" top="86" />
+        <Location left="1223" top="44" />
         <Size width="272" height="116" />
       </Entity>
       <Entity type="Class">
         <Name>Action</Name>
         <Access>Public</Access>
-        <Location left="1328" top="245" />
+        <Location left="1238" top="234" />
         <Size width="162" height="162" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int timeToExecute</Member>
@@ -1166,36 +1171,38 @@
       <Entity type="Class">
         <Name>Driver</Name>
         <Access>Public</Access>
-        <Location left="832" top="67" />
+        <Location left="1449" top="441" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">DriverState driverState</Member>
+        <Member type="Field">DriverState currentState</Member>
+        <Member type="Field">RunningState runningState</Member>
+        <Member type="Field">PausedState pausedState</Member>
         <Member type="Field">GameWorld gameWorld</Member>
         <Member type="Field">GraphicsHandler graphicsHandler</Member>
         <Member type="Field">PriorityQueu actionQueu</Member>
-        <Member type="Method">public void popAction()</Member>
+        <Member type="Method">public void popActions()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Interface">
         <Name>DriverState</Name>
         <Access>Public</Access>
-        <Location left="832" top="336" />
+        <Location left="1449" top="710" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void catchEvents()</Member>
       </Entity>
       <Entity type="Interface">
-        <Name>RunningState</Name>
+        <Name>DriverRunningState</Name>
         <Access>Public</Access>
-        <Location left="718" top="602" />
+        <Location left="1335" top="976" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void catchEvents()</Member>
       </Entity>
       <Entity type="Interface">
-        <Name>PausedState</Name>
+        <Name>DriverPausedState</Name>
         <Access>Public</Access>
-        <Location left="942" top="602" />
+        <Location left="1559" top="976" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void catchEvents()</Member>
@@ -1203,37 +1210,210 @@
       <Entity type="Class">
         <Name>GameWorld</Name>
         <Access>Public</Access>
-        <Location left="289" top="67" />
-        <Size width="162" height="216" />
+        <Location left="851" top="441" />
+        <Size width="162" height="332" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">CustomGroup allSprites</Member>
+        <Member type="Field">CustomGroup animates</Member>
+        <Member type="Field">CustomGroup activeHorde</Member>
+        <Member type="Field">customGroup activeHumans</Member>
+        <Member type="Field">CustomGroup AllSprites</Member>
+        <Member type="Field">CustomGroup screenEdges</Member>
+        <Member type="Field">Human Player</Member>
+        <Member type="Field">Map map</Member>
+        <Member type="Field">CustomGroup areaObjects</Member>
+        <Member type="Field">List&lt;layers&gt; layers</Member>
+        <Member type="Method">public void spawn()</Member>
+        <Member type="Method">public void move()</Member>
+        <Member type="Method">public void checkCollisions()</Member>
+        <Member type="Method">public void update()</Member>
+        <Member type="Method">public void attack()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>GraphicsHandler</Name>
         <Access>Public</Access>
-        <Location left="1381" top="69" />
-        <Size width="162" height="216" />
+        <Location left="1119" top="591" />
+        <Size width="162" height="132" />
         <Collapsed>False</Collapsed>
-        <Modifier>None</Modifier>
+        <Member type="Field">GameWorld gameWorld</Member>
+        <Member type="Method">public void draw()</Member>
+        <Modifier>Abstract</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>TopDown2d</Name>
         <Access>Public</Access>
-        <Location left="1654" top="69" />
-        <Size width="162" height="216" />
+        <Location left="1119" top="808" />
+        <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">GameWorld gameWorld</Member>
+        <Member type="Field">Surface screen</Member>
+        <Member type="Method">public void draw()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Action</Name>
         <Access>Public</Access>
-        <Location left="1123" top="336" />
+        <Location left="1740" top="710" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int timeToExecute</Member>
         <Member type="Field">Function executable</Member>
         <Member type="Field">List&lt;String&gt; args</Member>
         <Member type="Method">public void execute()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CustomGroup</Name>
+        <Access>Public</Access>
+        <Location left="604" top="443" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;CustomGroup&gt; superGroups</Member>
+        <Member type="Method">public void add(Sprite sprites)</Member>
+        <Member type="Method">public void addSubGroup(CustomGroup customSubGroup)</Member>
+        <Member type="Method">public void addSuperGroup(CustomGroup customSuperGroup)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ScreenEdge</Name>
+        <Access>Public</Access>
+        <Location left="10" top="1093" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String edge</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Inanimate</Name>
+        <Access>Public</Access>
+        <Location left="10" top="1016" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RenderUpdates</Name>
+        <Access>Public</Access>
+        <Location left="604" top="321" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Despite what it sounds like, RenderUpdates is actually a pygame group with special properties and methods</Text>
+        <Location left="375" top="321" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Class">
+        <Name>GridMap</Name>
+        <Access>Public</Access>
+        <Location left="650" top="1093" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Grid grid</Member>
+        <Member type="Field">AreaSprite sprite</Member>
+        <Member type="Field">Tuple currentArea</Member>
+        <Member type="Method">public void loadArea()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Area</Name>
+        <Access>Public</Access>
+        <Location left="225" top="1093" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">AreaSprite sprite</Member>
+        <Member type="Field">AreaSchematic areaSchematic</Member>
+        <Member type="Field">CustomGroup areaObjects</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Grid</Name>
+        <Access>Public</Access>
+        <Location left="441" top="1093" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">AreaNestedLists areas</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DirtySprite</Name>
+        <Access>Public</Access>
+        <Location left="203" top="692" />
+        <Size width="266" height="77" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AreaSprite</Name>
+        <Access>Public</Access>
+        <Location left="151" top="808" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">pygame.Surface image</Member>
+        <Member type="Field">pygame.Rect rect</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Main</Name>
+        <Access>Public</Access>
+        <Location left="1449" top="103" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Level level</Member>
+        <Member type="Field">Driver driver</Member>
+        <Member type="Method">public void main()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Level</Name>
+        <Access>Public</Access>
+        <Location left="1069" top="103" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int zombieCount</Member>
+        <Member type="Field">int width</Member>
+        <Member type="Field">int height</Member>
+        <Member type="Field">int lootModifier</Member>
+        <Member type="Field">int type</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Map</Name>
+        <Access>Public</Access>
+        <Location left="851" top="845" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AreaSchematic</Name>
+        <Access>Public</Access>
+        <Location left="225" top="1362" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Wall</Name>
+        <Access>Public</Access>
+        <Location left="329" top="808" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">pygame.Surface image</Member>
+        <Member type="Field">pygame.Rect rect</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ActionQueue</Name>
+        <Access>Public</Access>
+        <Location left="1740" top="441" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Action&gt; actions</Member>
+        <Member type="Method">public void push(Action action)</Member>
+        <Member type="Method">public Action pop()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
@@ -1257,24 +1437,201 @@
         <AssociationType>Composition</AssociationType>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="0" second="5">
+      <Relationship type="Generalization" first="6" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1199</X>
+          <Y>783</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1199</X>
+          <Y>748</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="4" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="9" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>97</X>
+          <Y>1066</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>97</X>
+          <Y>1086</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="8" second="11">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="12" second="11">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>560</X>
+          <Y>344</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="14" second="9">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <EndMultiplicity>4</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="13" second="15">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>623</X>
+          <Y>1202</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>629</X>
+          <Y>1202</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="15" second="14">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="17" second="16">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="14" second="17">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="18" second="19">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="18" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="4" second="20">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="13" second="20">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>860</X>
+          <Y>1248</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>894</X>
+          <Y>1088</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="14" second="21">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="14" second="22">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>346</X>
+          <Y>1060</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>346</X>
+          <Y>944</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="22" second="16">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="14" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>310</X>
+          <Y>1068</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>679</X>
+          <Y>880</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="8" second="16">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>553</X>
+          <Y>525</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="23">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
-      <Relationship type="Generalization" first="6" second="5">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-      </Relationship>
-      <Relationship type="Association" first="0" second="7">
-        <StartOrientation>Horizontal</StartOrientation>
+      <Relationship type="Association" first="23" second="7">
+        <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>1046</X>
-          <Y>203</Y>
-        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
         <EndMultiplicity>0..*</EndMultiplicity>
